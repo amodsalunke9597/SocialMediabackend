@@ -177,14 +177,12 @@ const updateUserProfile = async (req, res) => {
             user.bio = bio;
         }
         if (userImg) {
-            const cloudImg = await cloudinary.uploader.upload(userImg, {
-                folder: "profileImg",
-            });
             user.avatar = {
-                url: cloudImg.secure_url,
-                publicId: cloudImg.public_id,
+                url: userImg,
+                //publicId: cloudImg.public_id,
             };
         }
+
         await user.save();
         return res.send(success(200, { user }));
     } catch (e) {

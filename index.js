@@ -25,7 +25,8 @@ const app = express();
 app.use(express.json({ limit: "10mb" }));
 app.use(morgan("common"));
 app.use(cookieParser());
-let origin = 'http://localhost:3000';
+//let origin = 'http://localhost:3000';
+let origin = 'https://idyllic-buttercream-122926.netlify.app/';
 console.log('here env', process.env.NODE_ENV);
 // if(process.env.NODE_ENV === 'production') {
 //    origin = process.env.CLIENT_ORIGIN;
